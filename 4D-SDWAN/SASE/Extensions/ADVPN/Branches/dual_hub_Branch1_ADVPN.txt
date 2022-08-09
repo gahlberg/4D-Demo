@@ -1,0 +1,55 @@
+config vpn ipsec phase1-interface 
+    edit "HUB1-VPN1"
+      set auto-discovery-receiver enable
+    next
+        edit "HUB1-VPN2"
+      set auto-discovery-receiver enable
+    next
+        edit "HUB2-VPN1"
+      set auto-discovery-receiver enable
+    next
+        edit "HUB2-VPN2"
+      set auto-discovery-receiver enable
+    next
+end
+
+
+config router bgp
+    config neighbor
+        edit "100.127.1.1"
+         set additional-path receive
+        next
+        edit "100.127.2.1"
+         set additional-path receive
+        next
+        edit "100.127.4.1"
+         set additional-path receive
+        next
+        edit "100.127.5.1"
+         set additional-path receive
+        next
+    end
+    end
+    
+config system sdwan
+config service
+    edit 2
+        set dst "Datacenter" "Branch-NET"
+    next
+end
+end
+
+config firewall policy
+edit 3
+        set name "Remote Branches"
+        set srcintf "HUB1_Overlay" "HUB2_Overlay"
+        set dstintf "port3"
+        set action accept
+        set srcaddr "Branch-NET"
+        set dstaddr "Branch-NET"
+        set schedule "always"
+        set service "ALL"
+        set logtraffic all
+        set comments "Branch to Branch Policy"
+    next
+end
