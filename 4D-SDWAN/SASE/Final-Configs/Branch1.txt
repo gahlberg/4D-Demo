@@ -96,7 +96,7 @@ config system sdwan
             set server "172.16.100.2"
             set failtime 3
             set update-static-route disable
-            set members 3 4
+            set members 5 6
             config sla
                 edit 1
                     set latency-threshold 125

@@ -96,7 +96,7 @@ config system sdwan
             set server "172.16.100.2"
             set failtime 3
             set update-static-route disable
-            set members 3 4
+            set members 5 6
             config sla
                 edit 1
                     set latency-threshold 125
@@ -173,7 +173,7 @@ config vpn ipsec phase1-interface
         set mode-cfg enable
         set proposal aes256-sha256
         set add-route disable
-        set localid "Branch1"
+        set localid "Branch2"
         set network-overlay enable
         set network-id 1
         set remote-gw 50.18.56.146
@@ -187,7 +187,7 @@ config vpn ipsec phase1-interface
         set mode-cfg enable
         set proposal aes256-sha256
         set add-route disable
-        set localid "Branch1"
+        set localid "Branch2"
         set network-overlay enable
         set network-id 2
         set remote-gw 52.52.217.147
@@ -201,7 +201,7 @@ config vpn ipsec phase1-interface
         set mode-cfg enable
         set proposal aes256-sha256
         set add-route disable
-        set localid "Branch1"
+        set localid "Branch2"
         set network-overlay enable
         set network-id 4
         set remote-gw 3.14.112.252
@@ -215,7 +215,7 @@ config vpn ipsec phase1-interface
         set mode-cfg enable
         set proposal aes256-sha256
         set add-route disable
-        set localid "Branch1"
+        set localid "Branch2"
         set network-overlay enable
         set network-id 5
         set remote-gw 3.130.20.248
@@ -304,6 +304,7 @@ config router bgp
 end
     
 config network
+
     edit 1
         set prefix 10.22.1.0 255.255.255.0
     next

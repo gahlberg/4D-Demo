@@ -10,7 +10,7 @@ config vpn ipsec phase1-interface
         set add-route disable
         set dpd on-idle
         set network-overlay enable
-        set network-id 1
+        set network-id 4
         set ipv4-start-ip 100.127.4.2
         set ipv4-end-ip 100.127.4.253
         set ipv4-netmask 255.255.255.0
@@ -28,7 +28,7 @@ config vpn ipsec phase1-interface
         set add-route disable
         set dpd on-idle
         set network-overlay enable
-        set network-id 2
+        set network-id 5
         set ipv4-start-ip 100.127.5.2
         set ipv4-end-ip 100.127.5.253
         set ipv4-netmask 255.255.255.0

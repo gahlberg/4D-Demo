@@ -324,10 +324,10 @@ config system sdwan
 			set priority-members 1
 		next
 		edit 2
-			set name "ToBranch-VPN2"
-			set route-tag 2
-			set src "all"
-			set priority-members 2
+		set name "ToBranch-VPN2"
+		set route-tag 2
+		set src "all"
+		set priority-members 2
 		next
 	end
 end
